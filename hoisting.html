@@ -1,0 +1,331 @@
+<!--
+	JavaScript Hoisting refers to the process whereby the interpreter allocates memory for variable and function declarations prior to execution of the code.
+-
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hosting Demo</title>
+	</head>
+	
+	<body>
+
+		<p id="data">Text Here</p>
+
+		<script type="text/javascript">
+
+			let x;
+			x=10;
+
+			let y;
+			y=20;
+
+			document.getElementById("data").innerHTML = (x+y);
+		</script>
+
+	</body>
+</html>
+
+//---------------------------------------------------------------------------------------------------
+
+		// Regular expression(RegEx) and String Object
+
+	 A regular expression is an object that describes a pattern of characters. Regular expressions are used to perform pattern-matching and "search-and-replace" functions on text. 
+
+
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>RegEx Demo</title>
+	</head>
+	<body>
+		<p id="data">A regular expression is an object that describes a Pattern of characters. Regular expressions are used to perform pattern-matching and "search-and-replace" functions on text. </p>
+
+		<hr/>
+		<p id="displayarea">Display Text here</p>
+		<p id="outputarea">output_area</p>
+
+		<script type="text/javascript">
+			
+			let str=document.getElementById("data").innerHTML;
+
+			// search using the Regex
+
+			//let expr=/pattern/i;
+			//let n=str.search(expr);
+
+			let n=str.search(/pattern/i);
+			//alert("Position: "+n);
+			document.getElementById("outputarea").innerHTML="First Position is: "+n;
+
+			// replace using the regex
+
+			let res=str.replace(/regular expression/ig,"RegEx");
+			document.getElementById("displayarea").innerHTML=res;
+
+		</script>
+	</body>
+</html>
+
+//---------------------------------------------------------------------------------------------------------
+
+			// RegEx Example
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RegEx Example</title>
+		<script type="text/javascript">
+			function validateuser(){
+				var unm=document.getElementById("username").value;
+				//var rex=/y/i;
+				//var rex=/humble[0-9]/i;
+				var rex=/[hjtf]umble[6-9]/i;
+				if(rex.test(unm))
+				{
+					document.getElementById("lblmsg").style.visibility="hidden";
+					alert("You have selected valid Username");
+				}
+				else
+				{
+					document.getElementById("lblmsg").style.visibility="visible";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="text" placeholder="Enter Your Username" id="username"><br/>
+			<label id="lblmsg" style="color: red; visibility: hidden;"> Invalid Username</label> <br/>
+			<button type="button" onclick="validateuser()">Submit</button>
+		</form>
+	</body>
+</html>
+
+//-------------------------------------------------------------------------------------------------------
+
+		// Numbers in JavaScript:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Adding Numbers and Strings</title>
+</head>
+<body>
+    <script>
+    // Creating variables
+    var x = 10;
+    var y = 20;
+    var z = "30";
+    
+    // Adding a number with a number, the result will be sum of numbers
+    document.write(x + y); // 30
+    document.write("<br>");
+    
+    // Adding a string with a string, the result will be string concatenation
+    document.write(z + z); // '3030'
+    document.write("<br>");
+    
+    // Adding a number with a string, the result will be string concatenation
+    document.write(x + z); // '1030'
+    document.write("<br>");
+    
+    // Adding a string with a number, the result will be string concatenation
+    document.write(z + x); // '3010'
+    document.write("<br>");
+    
+    // Adding strings and numbers, the result will be string concatenation
+    document.write("The result is: " + x + y); // 'The result is: 1020'
+    document.write("<br>");
+    
+    // Adding numbers and strings, calculation performed from left to right
+    document.write(x + y + z); // 'The result is: 3030'
+    </script>
+</body>
+
+
+
+	//---------------------------------------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Numbers</title>
+</head>
+<body>
+    <script>
+    // Creating variables
+    var x = 2;  // integer number
+    var y = 3.14;  // floating-point number
+    var z = 0xff;  // hexadecimal number
+    
+    // Printing variable values
+    document.write(x + "<br>");
+    document.write(y + "<br>");
+    document.write(z);
+    </script>
+</body>
+</html>
+
+
+//---------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Representing Numbers in Exponential Notation</title>
+</head>
+	<body>
+	    <script>
+		    // Creating variables
+		    var x = 1.57e4;  // same as 15700
+		    var y = 4.25e+6;  // same as 4.25e6 or 4250000
+		    var z = 4.25e-6;  // same as 0.00000425
+		    
+		    // Printing variable values
+		    document.write(x + "<br>");
+		    document.write(y + "<br>");
+		    document.write(z);
+		    console.log(z);
+		</script>
+	</body>
+</html>
+
+
+
+	Note: 
+		-  if you try to multiply or divide numbers with strings that are not numeric, it returns NaN (Not a Number). 
+
+		- Infinity represents a number too big for JavaScript to handle. JavaScript has special keyword Infinity and -Infinity to represent positive and negative infinity respectively.
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Representing Infinity</title>
+	</head>
+	<body>
+	    <script>
+		    var x = 5 / "a";
+		    document.write(x + "<br>"); // NaN
+
+		    var x = 5 / 0;
+		    document.write(x + "<br>"); // Infinity
+		    
+		    var y = -5 / 0;
+		    document.write(y); // -Infinity
+	    </script>
+	</body>
+</html>
+
+//-------------------------------------------------------------------------------------------------
+
+		// Precision Problems
+
+		var x = 0.1 + 0.2;
+		console.log(x) // 0.30000000000000004
+
+		can be corrected as
+
+		var x = (0.1 * 10 + 0.2 * 10) / 10;
+		console.log(x) // 0.3
+
+		//---------------------------------------
+
+		var x = 999999999999999; // Upto 15 digits
+		console.log(x); // 999999999999999
+
+		var y = 9999999999999999; // 16 Onwards
+		console.log(y); // 10000000000000000
+
+
+		//-------------------------------------------------------------------------------------------------
+
+	// Parsing Integers from Strings
+
+		console.log(parseInt("3.14"));  // 3
+		console.log(parseInt("50px"));  // 50
+		console.log(parseInt("12pt"));  // 12
+		console.log(parseInt("0xFF", 16));  // 255
+		console.log(parseInt("20 years"));  // 20
+		console.log(parseInt("Year 2048"));  // NaN
+		console.log(parseInt("10 12 2018"));  // 10
+
+
+
+		// Converting Numbers to Strings
+
+		var x = 10;
+		var y = x.toString();
+		console.log(y);  // '10'
+		console.log(typeof y);  // string
+		console.log(typeof x);  // number
+
+		console.log((12).toString());  // '12'
+		console.log((15.6).toString());  // '15.6'
+		console.log((6).toString(2));  // '110'
+		console.log((255).toString(16));  // 'ff'
+
+
+		For Fractional Numbers
+
+		var x = 67.1234;
+		console.log(x.toExponential());  // 6.71234e+1
+		console.log(x.toExponential(6));  // 6.712340e+1
+		console.log(x.toExponential(4));  // 6.7123e+1
+		console.log(x.toExponential(2));  // 6.71e+1
+
+
+		Using toFixed():
+
+		var x = 72.635;
+		console.log(x.toFixed());  // '73' (note rounding, no fractional part)
+		console.log(x.toFixed(2));  // '72.64' (note rounding)
+		console.log(x.toFixed(1));  // '72.6'
+
+		var y = 6.25e+5;
+		console.log(y.toFixed(2)); // '625000.00'
+
+		var z = 1.58e-4;
+		console.log(z.toFixed(2));  // '0.00' (since 1.58e-4 is equal to 0.000158)
+
+
+		// using toPrecision()
+
+		var x = 6.235;
+
+		console.log(x.toPrecision());  // '6.235'
+		console.log(x.toPrecision(3));  // '6.24' (note rounding)
+		console.log(x.toPrecision(2));  // '6.2'
+		console.log(x.toPrecision(1));  // '6'
+
+		var y = 47.63;
+		console.log(y.toPrecision(2)); // '48' (note rounding, no fractional part)
+
+		var z = 1234.5;
+		console.log(z.toPrecision(2));  // '1.2e+3'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

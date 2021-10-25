@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Variable Scope</title>
+		<script type="text/javascript">
+			var x=100; 
+			function first(){
+	
+				alert("Value of x is "+x);
+			}
+			function second(){
+			
+				alert("Value of x is "+x);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Variable Scope </h1>
+		<form>
+			<div>
+				<input type="button" value="click" onclick="first()"/>
+			</div>
+			<div>
+				<input type="button" value="click" onclick="second()"/>
+			</div>
+		</form>
+	</body>
+</html>

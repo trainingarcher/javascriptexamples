@@ -1,0 +1,183 @@
+<!--
+
+		// Using the Events:
+		// =================
+
+			Handling the mouse Click: onClick
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using getElementById</title>
+	</head>
+	<body>
+
+		<p id="data"> Display Text Here </p>
+		<input type="button" value="click Me" onclick="msg()"/>
+
+		<script type="text/javascript">
+			function msg(){
+				document.getElementById("data").innerHTML="The Text Changed From the Script";
+			}
+		</script>
+	</body>
+</html>
+
+//---------------------------------------------------------------------------------------------
+	
+		Handling the Mouseover Event (onmouseover)
+			The mouseover event occurs when a user moves the mouse pointer over an element.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Handling the Mouseover Event</title>
+</head>
+<body>
+    <button type="button" onmouseover="msg1()">Place Mouse Over Me</button>
+    <a href="#" onmouseover="msg2()">Place Mouse Over Me</a>
+
+    <script type="text/javascript">
+		function msg1(){
+			alert('You have placed mouse pointer over a button!');
+		}    
+		function msg2(){
+			alert('You have placed mouse pointer over a button!');
+		}    	
+    </script>
+</body>
+</html>
+//-------------------------------------------------------------------------------------------
+
+	// Handling Mouseout Event (onmouseout)
+			The mouseout event occurs when a user moves the mouse pointer outside of an element.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Handling the Mouseover Event</title>
+</head>
+<body>
+    <button type="button" onmouseout="msg1()">Place Mouse Over Me</button>
+    <a href="#" onmouseover="msg2()">Place Mouse Over Me</a>
+
+    <script type="text/javascript">
+		function msg1(){
+			alert('You have placed mouse pointer over a button!');
+		}    
+		function msg2(){
+			alert('You have placed mouse pointer out of a button!');
+		}    	
+    </script>
+</body>
+</html>
+
+//---------------------------------------------------------------------------------------------------------
+
+	Handling the keyboard Events
+
+		These events are are fired when user performs the press or release a key on the keyboard
+
+		 Keydown Event (onkeydown): The keydown event occurs when the user presses down a key on the keyboard.
+
+		 Keyup Event (onkeyup): The keyup event occurs when the user releases a key on the keyboard.
+
+		  Keypress Event (onkeypress): The keypress event occurs when a user presses down a key on the keyboard that has a character value. Ctri, shift ,arraos .. will not going to generate the keypress event but will genetares keydown and keyup
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Using the KeyEvents</title>
+	</head>
+	<body>
+		<input type="text" id="down" onkeydown="msg1()">
+		<input type="text" id="up" onkeyup="msg2()">
+		<input type="text" id="press" onkeypress="msg3()">
+	</body>
+
+	<script type="text/javascript">
+		function msg1(){
+			alert('Keydown event is generated...!');
+		}    
+		function msg2(){
+			alert('Keyup event is generated...!');
+		} 
+		function msg3(){
+			alert('Keypress event is generated...!');
+		}    	
+    </script>
+</html>
+
+//--------------------------------------------------------------------------------------
+
+	 Focus Event (onfocus): The focus event occurs when the user gives focus to an element on a web page.
+
+	 Blur Event (onblur): The blur event occurs when the user takes the focus away from a form element or a window.
+
+	  Submit Event (onsubmit): The submit event only occurs when the user submits a form on a web page.
+
+	Document/Window Events:
+	=======================
+
+	   Load Event (onload): The load event occurs when a web page has finished loading in the web browser.
+
+	   Unload Event (onunload): The unload event occurs when a user leaves the current web page.
+
+	    Resize Event (onresize): The resize event occurs when a user resizes the browser window. The resize event also occurs in situations when the browser window is minimized or maximized.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangling onfocus</title>
+	<script type="text/javascript">
+		function changebk(t){
+			t.style.background = "blue";
+		}
+		function makegray(t){
+			t.style.background = "gray";
+		}
+	</script>
+</head>
+<body onload="alert('page loaded successfully');">
+	<form action="#" method="post" onsubmit="alert('From submited to server');">
+		<input type="text" onblur="makegray(this)" onfocus="changebk(this)">
+		
+		<select onchange="alert('You have changed the selection!');">
+	        <option>Select</option>
+	        <option>Male</option>
+	        <option>Female</option>
+	    </select>
+
+	    <input type="submit" value ="submit">
+	</form>
+</body>
+</html>
+
+//-------------------------------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Handling the Resize Event</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        function displayWindowSize(){
+            var w = window.outerWidth;
+            var h = window.outerHeight;
+            var txt = "Window size: width=" + w + ", height=" + h;
+            document.getElementById("result").innerHTML = txt;
+        }
+        window.onresize = displayWindowSize;
+    </script>
+</body>
+</html>

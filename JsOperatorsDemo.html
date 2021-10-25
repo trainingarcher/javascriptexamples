@@ -1,0 +1,301 @@
+<!--
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Operators Demo</title>
+	</head>
+	<body>
+		 <script>
+
+		 	// Arithmetic operators
+		    var x = 10;
+		    var y = 4;
+		    document.write(x + y);
+		    document.write("<br>");
+		    
+		    document.write(x - y);
+		    document.write("<br>");
+		    
+		    document.write(x * y); 
+		    document.write("<br>");
+		    
+		    document.write(x / y); 
+		    document.write("<br>");
+		    
+		    document.write(x % y); 
+    	</script>
+	</body>
+</html>
+//-------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo Operators</title>
+	</head>
+	<body>
+		<script>
+				// Assignment
+    		var x;   
+ 			x = 10;
+		    document.write(x + "<br>"); 
+		    
+		    x = 20;
+		    x += 30; // x=x+30
+		    document.write(x + "<br>"); 
+		     
+		    x = 50;
+		    x -= 20;
+		    document.write(x + "<br>"); 
+		     
+		    x = 5;
+		    x *= 25;
+		    document.write(x + "<br>"); 
+		     
+		    x = 50;
+		    x /= 10;
+		    document.write(x + "<br>"); 
+		     
+		    x = 100;
+		    x %= 15;
+		    document.write(x); 
+    	</script>
+	</body>
+</html>
+
+//-------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo Operators</title>
+	</head>
+	<body>
+		<script>
+				// Increament-Decreament
+    		var x = 4, y = 12;   
+ 		
+		    document.write("x=" + x + " y=" + y + "<br>"); 
+
+		    x++;
+		    --y;
+		    document.write("x=" + x + " y=" + y + "<br>"); 
+
+		    var z= ++x + y-- ;
+		    document.write("x=" + x + " y=" + y + " z=" + z + "<br>"); 
+		 
+    	</script>
+	</body>
+</html>
+
+
+//-------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo Operators</title>
+	</head>
+	<body>
+		<script>
+				// Relational
+    		var x = 4, y = 12;   
+
+    		var z=(x>y); 		
+		    document.write("x=" + x + " y=" + y + " z=" + z + "<br>"); 
+
+		    z=(x!=0);
+		    document.write("x=" + x + " y=" + y + " z=" + z + "<br>");  
+
+		    z=(y<100) ;
+		    document.write("x=" + x + " y=" + y + " z=" + z + "<br>"); 
+		 
+    	</script>
+	</body>
+</html>
+
+//-------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo Operators</title>
+	</head>
+	<body>
+		<script>
+				// Logical
+    		var x = 4, y = 12;   
+
+    		var z=(x>y) && (y<100); 		
+		    document.write("(x>y) && (y<100): " + z + "<br>"); 
+
+		    z=(x>y) || (y<100); 
+		    document.write("(x>y) || (y<100): " + z + "<br>");  
+
+		    z=!(y<100) ;
+		    document.write("!(y<100): " + z + "<br>"); 
+		 
+    	</script>
+	</body>
+</html>
+
+//-------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Leap Year</title>
+	</head>
+	<body>
+		<script>
+		    var year = 2016;
+
+		    if((year % 400 == 0) || ((year % 100 != 0) && (year % 4 == 0))){
+		        document.write(year + " is a leap year.");
+		    } else{
+		        document.write(year + " is not a leap year.");
+		    }
+    	</script>
+	</body>
+</html>
+
+
+//-------------------------------------------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>operators</title>
+	</head>
+	<body>
+		<script>
+		   	
+		   	var x=100;
+		   	var y="100";
+
+		   	document.write("x==y is "+(x==y) + "<br/>"); // it will go for only value not for type
+		   	document.write("x===y is "+(x===y)+ "<br/>"); // it will go for the value and type both
+
+		   	x=3;
+		   	y=4;
+		   	document.write("x*y is "+(x*y)+ "<br/>");
+		   	document.write("x**y is "+(x**y)+ "<br/>");
+    	</script>
+	</body>
+</html>
+
+//----------------------------------------------------------------------------------------------------
+
+
+	// Using the keywords let and var
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using let and var</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//var x=12;  
+			let x=12;
+			document.write("x is "+x+ "<br/>");
+			/*
+				the let is used to decl. the variable like var. it  was introduced in ES6.
+				it having block scope and does not allows the redeclaration.
+
+				so therefore in above when we use the var will gives the output and
+				when we use the let then it will generate the error
+			*/
+
+			var x=1234;
+			document.write("x is "+x+ "<br/>");
+
+			var x="hello";
+			document.write("x is "+x+ "<br/>");
+
+			var x=true;
+			document.write("x is "+x+ "<br/>");
+		   	
+
+		</script>
+	</body>
+</html>
+
+
+//----------------------------------------------------------------------------------------------------
+
+
+	// Using the keywords let and var -block scope
+
+		- life of var is not limited in scope. it will take the last value assigned.
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using let and var</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var x=12;  
+			document.write("x is "+x+ "<br/>");
+
+			{
+				var x=1234;
+				document.write("x is "+x+ "<br/>");
+			}
+
+			document.write("x is "+x+ "<br/>");
+
+		</script>
+	</body>
+</html>
+
+//------------------------------------------------------------------
+
+	using let
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using let and var</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			let x=12;  
+			document.write("x is "+x+ "<br/>");
+
+			{
+				let x=1234;
+				document.write("x is "+x+ "<br/>");
+			}
+
+			document.write("x is "+x+ "<br/>");
+
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

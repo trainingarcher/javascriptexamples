@@ -1,0 +1,184 @@
+<!-- 
+	// JavaScript Functions
+
+				A function is a group of statements that perform specific tasks and can be kept and maintained separately form main program. Functions provide a way to create reusable code packages which are more portable and easier to debug. 
+
+				Here are some advantages of using functions:
+
+					- Functions reduces the repetition of code within a program
+					- Functions makes the code much easier to maintain
+					- Functions makes it easier to eliminate the errors
+
+
+					
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Define and Call a Function</title>
+	</head>
+	<body>
+	    <script>
+	    // Defining function
+	    function sayHello() {
+	        document.write("Hello, welcome to this website!");
+	    }
+	     
+	    // Calling function
+	    sayHello(); // Prints: Hello, welcome to this website!
+	    </script>
+	</body>
+</html> 		
+
+ 
+
+
+//--------------------------------------------------------------------------------------------
+
+		// Add Parameters to a Function
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Add Parameters to a Function</title>
+</head>
+<body>
+    <script>
+    // Defining function
+    function displaySum(num1, num2) {
+        var total = num1 + num2;
+        document.write(total);
+    }
+     
+    // Calling function
+    displaySum(6, 20); // Prints: 26
+    document.write("<br>");
+    displaySum(-5, 17); // Prints: 12
+    </script>
+</body>
+</html>  
+
+
+//------------------------------------------------------------------------------
+
+	// Passing the default values (ES6)
+
+		function sayHello(name = 'Guest') {
+
+			// var name = name || 'Guest';   // --  before ES6
+		    alert('Hello, ' + name);
+		}
+
+		sayHello(); // 0utputs: Hello, Guest
+		sayHello('John'); // 0utputs: Hello, John
+
+
+	// Returning Values from a Function
+
+		// Defining function
+		function getSum(num1, num2) {
+		    var total = num1 + num2;
+		    return total;
+		}
+		 
+		// Displaying returned value
+		alert(getSum(6, 20)); // 0utputs: 26
+		alert(getSum(-5, 17)); // 0utputs: 12
+
+
+	// Returning array
+
+		// Defining function
+		function divideNumbers(dividend, divisor){
+		    var quotient = dividend / divisor;
+		    var arr = [dividend, divisor, quotient];
+		    return arr;
+		}
+		 
+		// Store returned value in a variable
+		var all = divideNumbers(10, 2);
+		 
+		// Displaying individual values
+		alert(all[0]); // 0utputs: 10
+		alert(all[1]); // 0utputs: 2
+		alert(all[2]); // 0utputs: 5
+
+
+	// Using Function Expression
+
+		// Function Declaration
+		function getSum(num1, num2) {
+		    var total = num1 + num2;
+		    return total;
+		}
+
+
+	//---------------------------------------------------------------------------------------
+
+		// Arrow Functions:
+
+<!DOCTYPE html>
+	<html>
+	<body>
+
+		<h2>JavaScript Arrow Functions</h2>
+
+		<p id="demo"></p>
+
+		<script>
+			const x = (x, y) => { return x * y };
+			document.getElementById("demo").innerHTML = x(5, 5);
+		</script>
+
+	</body>
+</html>
+
+-
+	// Function Expression
+		var getSum = function(num1, num2) {
+		    var total = num1 + num2;
+		    return total;
+		};
+
+
+		// call to function expression The function is actually an anonymous function (a function without a name).
+
+		alert(getSum(5, 10)); // 0utputs: 15
+ 		var sum = getSum(7, 25);
+		alert(sum); // 0utputs: 32
+
+
+
+		// Self invoking function  --   (function(){})();
+
+		(function () {
+		  let x = "Hello!!";  // I will invoke myself
+		})(); 
+
+//---------------------------------------------------------------------------------------------------------
+
+
+	-->		// The JavaScript call() Method apply() : both can be called with argument first accept varivales and second needs array.
+			
+					The call() method is a predefined JavaScript method. It can be used to invoke (call) a method with an owner object as an argument (parameter).
+
+					const person = {
+					fullName: function() {
+					    return this.firstName + " " + this.lastName;
+					  }
+					}
+					const person1 = {
+					  firstName:"John",
+					  lastName: "Doe"
+					}
+					const person2 = {
+					  firstName:"Mary",
+					  lastName: "Doe"
+					}
+
+					// This will return "John Doe":
+					person.fullName.call(person1);
+

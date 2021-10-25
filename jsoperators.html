@@ -1,0 +1,94 @@
+
+<!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Operator Demo</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a=100;
+			var b=300;
+			z=a+b;
+			document.write("Addition is "+z);
+		</script>
+	</body>
+</html>
+
+//----------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Operator Demo</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				Like the many other languages, the default input in js in in form of string.
+				and the +(plus) operator is used to (overloaded internally) concat(join) two
+				different Strings.
+
+				- var s1="hello"	var s2=" good day"
+				  then,
+
+				  var s3=s1+s2;
+
+				  will gives hello good day
+
+				- suppose 
+
+					var x=10, y=20;
+					then,
+
+					var z=x+y;
+
+					wil gives 30.
+			
+			*/
+
+			var a=window.prompt("Enter the data");
+			var b=window.prompt("Enter the data");
+			
+			z=a+b;
+			document.write("Addition is "+z);
+		</script>
+	</body>
+</html>
+
+
+
+//----------------------------------------------------------------
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Operator Demo</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+			var a=Number(window.prompt("Enter the data"));
+			var b=parseInt(window.prompt("Enter the data"));
+			var c=+window.prompt("Enter the data");
+
+			/*
+				 // Converting the string into numeric value
+
+				 	- Number("");
+				 	- parseInt();
+				 	- Unary +
+			*/
+
+			document.write("Type of a is: "+ typeof a);
+			document.write("Type of b is: "+ typeof b);
+			document.write("Type of c is: "+ typeof c);
+
+			z=a+b+c;
+			document.write("Addition is "+z);
+		</script>
+	</body>
+</html>

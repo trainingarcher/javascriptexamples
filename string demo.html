@@ -1,0 +1,82 @@
+<!--
+
+	// ============================================================================================
+
+		// String is JavaScript:  It is collection of characters. which may contains digits,
+								  alphabers, special symobls
+
+
+					How the string is created:
+
+						'hello a123'		"good After noon"
+
+
+				
+					var s1="hello all"
+					var s2='how are you'
+
+
+					var s3=s1+s2; 	 // concat
+
+				- The js strings allows the escape sequence charaacters with in it.
+				  and these are...
+
+				  	- \n  = inserts newline
+				  	- \t  = inserts tab
+				  	- \b  = backspace 
+				  	- \r  = Carriage return (home key effect)
+				  	- \\
+
+
+				  string length: The length property returns the length of the string, which is the number of characters contained in the string.
+
+				  - indexOf() method to find a substring or string within another string. 
+				  - lastIndexOf() method to get the index or position of the last occurrence of the   specified string within a string.
+
+				  - search() method also returns the index of the first match, and returns -1 if no matches were found
+
+				  - slice() method to extract a part or substring from a string.
+
+				  - substr() method which is similar to slice() with a subtle difference, the second parameter specifies the number of characters to extract instead of ending index, like str.substr(startIndex, length)
+
+				  - replace() method to replace part of a string with another string. 
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>String Demo</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str="It is the collection of characters. \n which may contains\t digits,alphabers, special \\ symobols. it is represented in single ot double quotes";
+			document.write("<pre>"+str+"</pre>");
+
+			var s1="good day";
+			var s2="how are you";
+			document.write("<br/> Length of s1: "+s1.length);
+			document.write("<br/> Length of s2: "+s2.length);
+
+			var fpos=str.indexOf("is");
+			document.write("<br/> First occr: "+fpos);
+
+			var lpos=str.lastIndexOf("is");
+			document.write("<br/> Last occr: "+lpos);
+
+			var spos=str.search("is");
+			document.write("<br/> search occr: "+spos);
+
+			var sstr=str.slice(5,25);
+			document.write("<br/> substring is: "+sstr);
+
+			var s1str=str.substr(5,25);
+			document.write("<br/> substring is: "+s1str);
+
+			var srstr=str.replace("is","IS");
+			document.write("<br/> replace is: "+srstr);
+
+			
+		</script>
+	</body>
+</html>
+
