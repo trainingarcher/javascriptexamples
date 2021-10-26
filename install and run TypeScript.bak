@@ -24,15 +24,6 @@
 			Version 4.4.4
 
 
-If error in installation Ref:
-
-- Error: TypeScript error TS5023: Unknown compiler option 
-
-https://lockevn.medium.com/fix-typescript-error-ts5023-unknown-compiler-option-compileroptions-ca91dc655027
-
-- Error: tsc.ps1 cannot be loaded because running scripts is disabled on this system
-
-https://stackoverflow.com/questions/58796490/tsc-ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system
 		- Install VS Code
 
 			- install the Live Server extension
