@@ -1,0 +1,134 @@
+<!-- 
+
+			The Browser Object Model (BOM)
+			There are no official standards for the Browser Object Model (BOM).
+
+			Since modern browsers have implemented (almost) the same methods and properties for JavaScript interactivity, it is often referred to, as methods and properties of the BOM.
+
+
+			The Window Object
+				The window object represents a window containing a DOM document. A window can be the main window, a frame set or individual frame, or even a new window created with JavaScript.
+
+				If you remember from the preceding chapters we've used the alert() method in our scripts to show popup messages. This is a method of the window object.
+
+				//Calculating Width and Height of the Window
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Get Browser Viewport Dimensions</title>
+</head>
+<body>
+    <script>
+    function windowSize(){
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        alert("Width: " + w + ", " + "Height: " + h);
+    }
+    </script>
+     
+    <button type="button" onclick="windowSize();">Get Window Size</button>
+</body>
+</html>                            
+
+-
+
+
+The Screen Object
+The window.screen object contains information about the user's screen such as resolution (i.e. width and height of the screen), color depth, pixel depth, etc.
+
+ //Getting Width and Height of the Screen
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Get Screen Resolution</title>
+</head>
+<body>
+    <script>
+    function getResolution() {
+        alert("Your screen is: " + screen.width + "x" + screen.height);
+    }
+    </script>
+     
+    <button type="button" onclick="getResolution();">Get Resolution</button>
+</body>
+</html>    
+
+
+JavaScript Dialog Boxes
+
+Creating Dialog Boxes
+In JavaScript you can create dialog boxes or popups to interact with the user. You can either use them to notify a user or to receive some kind of user input before proceeding.
+
+You can create three different types of dialog boxes alert, confirm, and prompt boxes.
+
+// Creating Alert Dialog Boxes
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Alert Popup Box</title>
+</head>
+<body>
+    <script>
+    var message = "Hi there! Click OK to continue.";
+    alert(message);
+     
+    /* The following line won't execute until you dismiss previous alert */
+    alert("This is another alert box.");
+    </script>
+</body>
+</html>      
+
+
+//Creating Confirm Dialog Boxes
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Confirm Popup Box</title>
+</head>
+<body>
+    <script>
+    var result = confirm("Are you sure?");
+ 
+    if(result) {
+        document.write("You clicked OK button!");
+    } else {
+        document.write("You clicked Cancel button!");
+    }
+    </script>
+</body>
+</html>                            
+
+
+Working with Timers
+A timer is a function that enables us to execute a function at a particular time.
+
+Using timers you can delay the execution of code so that it does not get done at the exact moment an event is triggered or the page is loaded. For example, you can use timers to change the advertisement banners on your website at regular intervals, or display a real-time clock, etc. There are two timer functions in JavaScript: setTimeout() and setInterval().
+
+// Executing Code After a Delay
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Execute a Function after Some Time</title>
+</head>
+<body>
+    <script>
+    function myFunction() {
+        alert('Hello World!');
+    }
+    </script>
+     
+    <button onclick="setTimeout(myFunction, 2000)">Click Me</button>
+</body>
+</html> 

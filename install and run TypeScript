@@ -1,0 +1,71 @@
+
+
+	iNTRODUCTION TO TYPESCRIPT:
+
+
+		Setup the TypeScript: 
+
+		- Install Node.js  https://nodejs.org/en/download/
+		- Verify the installation by open the terminal on macOS and Linux or command line on Windows and type the command node -v
+
+			C:\Users\archer>node -v
+			v14.18.1
+
+
+		- Install TypeScript compiler
+
+			Execute the command: npm install -g typescript
+
+			After the installation, you can type the following command to check the current version of the TypeScript compiler:
+
+				tsc --v
+
+			C:\Users\archer>tsc --v
+			Version 4.4.4
+
+
+		- Install VS Code
+
+			- install the Live Server extension
+
+
+
+			//------------------------------------------------------------------------------------------
+
+
+				//  First Program in typescript
+
+					- Create one folder open in the vscode
+
+					- create a new TypeScript file called <File_name>.ts and write a code
+
+						let message: string = 'Hello, World!';
+						console.log(message);
+
+					- launch a new Terminal within the VS Code by using the keyboard shortcut Ctrl+` or follow the menu Terminal > New Terminal
+
+					 type the following command on the Terminal to compile the app.ts file:
+							..> tsc <file_name> .ts
+
+							* if everythimg all rigth then it will generate <file_name> .js
+
+
+					- To run the app.js file in node.js, you use the following command:
+
+							..> node <file_name>.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

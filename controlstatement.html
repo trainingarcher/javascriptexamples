@@ -1,0 +1,263 @@
+<!-- 
+	// Control statements in JavaScript
+
+		// JavaScript Conditional Statements
+
+		There are several conditional statements in JavaScript that you can use to make decisions:
+
+			- if statement
+			- if...else statement
+			- if...else if....else statement
+			- switch...case statement 
+
+
+			// Using if()
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript If Statement</title>
+	</head>
+	<body>
+	    <script>
+		    var now = new Date();
+		    console.log(now);
+		    var dayOfWeek = now.getDay(); // Sunday - Saturday : 0 - 6
+		    console.log(dayOfWeek);
+		    if(dayOfWeek == 5) {
+		        document.write("Have a nice weekend!");
+		    }
+
+		    if(dayOfWeek < 5) {
+		        alert("Tomorrow Working day");
+		    }
+
+		      if(dayOfWeek > 5) {
+		        alert("Enjoy sat-sun");
+		    }
+	    </script>
+	</body>
+</html>
+
+
+//-----------------------------------------------------------------------
+
+
+			// Using if() else
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript If Statement</title>
+	</head>
+	<body>
+	    <script>
+		    var now = new Date();
+		    console.log(now);
+		    var dayOfWeek = now.getDay(); // Sunday - Saturday : 0 - 6
+		    console.log(dayOfWeek);
+		    if(dayOfWeek == 5) {
+		        document.write("Have a nice weekend!");
+		    }
+			else{
+		        alert("Have a Good day");
+			}
+		    
+	    </script>
+	</body>
+</html>
+
+
+//-------------------------------------------------------------------------
+
+
+			// Using if() else if
+*/
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript If Statement</title>
+	</head>
+	<body>
+	    <script>
+		    var now = new Date();
+		    console.log(now);
+		    var dayOfWeek = now.getDay(); // Sunday - Saturday : 0 - 6
+		    console.log(dayOfWeek);
+		    if(dayOfWeek == 5) {
+		        document.write("Have a nice weekend!");
+		    }
+		    else if(dayOfWeek < 5) {
+		        alert("Tomorrow Working day");
+		    }
+			else if(dayOfWeek > 5) {
+		        alert("Enjoy sat-sun");
+		    }
+	    </script>
+	</body>
+</html>
+
+//-----------------------------------------------------------------------------------------------------
+
+		- The Ternary Operator
+
+
+		var result = (condition) ? value1 : value2
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Typical Conditional Statement</title>
+	</head>
+	<body>
+	    <script>
+	    var age = 21;
+	    var userType=(age < 18) ? 'child' : 'Adult' ;
+	    
+	    document.write(userType); // Prints Adult
+	    </script>
+	</body>
+</html>
+
+//--------------------------------------------------------------------------------------------------
+
+	Using the Switch...Case Statement
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Switch Case Statement</title>
+</head>
+<body>
+    <script>
+    var d = new Date();
+	
+    switch(d.getDay()) {
+        case 0:
+            document.write("Today is Sunday.");
+            break;
+        case 1:
+            document.write("Today is Monday.");
+            break;
+        case 2:
+            document.write("Today is Tuesday.");
+            break;
+        case 3:
+            document.write("Today is Wednesday.");
+            break;
+        case 4:
+            document.write("Today is Thursday.");
+            break;
+        case 5:
+            document.write("Today is Friday.");
+            break;
+        case 6:
+            document.write("Today is Saturday.");
+            break;   
+        default:
+            document.write("No information available for that day.");
+            break;
+    }
+    </script>
+</body>
+</html>
+
+//------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Combine Multiple Cases in a Switch Case Statement</title>
+</head>
+<body>
+    <script>
+    var d = new Date();
+
+	switch(d.getDay()) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+			document.write("It is a weekday.");
+			break; 
+		case 0:
+		case 6:
+			document.write("It is a weekend day.");
+			break;
+		default: 
+			document.write("Enjoy every day of your life.");
+	}
+    </script>
+</body>
+</html>
+
+//----------------------------------------------------------------------------------------------
+
+
+	// Loops in JavaScript
+
+		- while — loops through a block of code as long as the condition specified evaluates to true.
+
+		- do…while — loops through a block of code once; then the condition is evaluated. If the condition is true, the statement is repeated as long as the specified condition is true.
+
+		- for — loops through a block of code until the counter reaches a specified number.
+
+		<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript While Loop</title>
+	</head>
+	<body>
+	    <script>
+	    var i = 1;
+	    while(i <= 5) {    
+	        document.write("<p>The number is " + i + "</p>");
+	        i++;
+	    }
+	    </script>
+	</body>
+</html>
+
+	//----------------------------------------------------
+
+	<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Do-While Loop</title>
+	</head>
+	<body>
+	    <script>
+	    var i = 1;
+	    do {
+	        document.write("<p>The number is " + i + "</p>");
+	        i++;
+	    }
+	    while(i <= 5);
+	    </script>
+	</body>
+</html>
+
+	//-----------------------------------------------------
+
+	<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript For Loop</title>
+	</head>
+	<body>
+	    <script>
+	    for(var i=1; i<=5; i++) {
+	        document.write("<p>The number is " + i + "</p>");
+	    }
+	    </script>
+	</body>
+</html>

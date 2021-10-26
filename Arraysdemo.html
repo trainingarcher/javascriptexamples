@@ -1,0 +1,441 @@
+<!-- 
+	// Arrays in JavaScript: 
+
+			Arrays are complex variables that allow us to store more than one value or a group of values under a single variable name. JavaScript arrays can store any valid value, including strings, numbers, objects, functions, and even other arrays, 
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>Creating Arrays in JavaScript</title>
+	</head>
+	<body>
+	    <script>
+	    // Creating variables
+	    var colors = ["Red", "Green", "Blue"]; 
+	    var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+	    var cities = ["London", "Paris", "New York"];
+	    var person = ["John", "Wick", 32];
+	    
+	    // Printing variable values
+	    document.write(colors + "<br>");
+	    document.write(fruits + "<br>");
+	    document.write(cities + "<br>");
+	    document.write(person);
+	    </script>
+	</body>
+</html>
+
+//------------------------------------------------------------------------------
+
+		// Accessing the Elements of an Array
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Access Individual Elements of an Array</title>
+</head>
+<body>
+    <script>
+    var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+    document.write(fruits[0] + "<br>"); // Prints: Apple
+    document.write(fruits[1] + "<br>"); // Prints: Banana
+    document.write(fruits[2] + "<br>"); // Prints: Mango
+    document.write(fruits[fruits.length - 1]); // Prints: Papaya
+    </script>
+</body>
+</html>
+
+//---------------------------------------------------------------------------------
+
+		// Looping Through Array Elements and using length
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Loop Through an Array Using For Loop</title>
+</head>
+<body>
+    <script>
+    var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+    // Iterates over array elements
+    for(var i = 0; i < fruits.length; i++){    
+        document.write(fruits[i] + "<br>"); // Print array element
+    }
+    </script>
+</body>
+</html>
+
+//---------------------------------------------------------------------------------
+
+	Using  for-in loop
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Loop Through an Array Using For-In Loop</title>
+</head>
+<body>
+    <script>
+    var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+    // Loop through all the elements in the array 
+    for(var i in fruits)  {  
+        document.write(fruits[i] + "<br>");
+    }
+    </script>
+</body>
+</html>
+
+
+//---------------------------------------------------------------------------------
+
+	Using  for-of loop: ECMAScript 6 has introduced a simpler way to iterate over array element, which is for-of loop.
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Loop Through an Array Using For-Of Loop</title>
+</head>
+<body>
+    <script>
+    var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+    // Iterates over array elements
+    for(var fruit of fruits){    
+        document.write(fruit + "<br>"); // Print array element
+    }
+    </script>
+</body>
+</html>
+
+
+//------------------------------------------------------------------------------------
+
+	- Adding New Elements to an Array
+
+		To add a new element at the end of an array, simply use the push() and Similarly, to add a new element at the beginning of an array use the unshift() method,
+
+		You can also add multiple elements at once using the push() and unshift() methods
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Add a New Element at the Beginning of an Array</title>
+	</head>
+	<body>
+	    <script>
+	    var colors = ["Red", "Green", "Blue"]; 
+	    colors.push("gray");
+	    colors.unshift("Yellow");
+	    colors.push("Pink", "Voilet");
+		colors.unshift("magenta", "black");
+	     
+	    document.write(colors + "<br>"); 
+	    document.write(colors.length); 
+	    </script>
+	</body>
+</html>
+//------------------------------------------------------------------------------------
+
+	- Removing New Elements to an Array
+
+		- To remove the last element from an array you can use the pop() method. This method returns the value that was popped out.
+
+		- Similarly, you can remove the first element from an array using the shift() method. This method also returns the value that was shifted out.
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Remove the First Element from an Array</title>
+	</head>
+	<body>
+	    <script>
+	    var colors = ["Red", "Green", "Blue"];
+	      
+	    document.write(colors + "<br>");
+	      
+	    var first = colors.shift();     
+	    document.write(first + "<br>");
+	    document.write(colors.length + "<br>"); 
+	      
+		var last = colors.pop(); 
+		document.write(last + "<br>");
+		document.write(colors.length + "<br>");
+	      
+	    document.write(colors + "<br>");
+	    </script>
+	</body>
+</html>
+
+
+ 	- Using the splic() to add/remove the element/s to/from any position
+
+ 	<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Add or Remove Array Elements at any Index</title>
+	</head>
+	<body>
+	    <script>
+		    var colors = ["Red", "Green", "Blue"];
+		    var removed = colors.splice(0,1); // Remove the first element
+		     
+		    document.write(colors + "<br>"); // Prints: Green,Blue
+		    document.write(removed + "<br>"); // Prints: Red (one item array)
+		    document.write(removed.length + "<br>"); // Prints: 1
+		     
+		    removed = colors.splice(1, 0, "Pink", "Yellow"); // Insert two items at position one
+		    document.write(colors + "<br>"); // Prints: Green,Pink,Yellow,Blue
+		    document.write(removed + "<br>"); // Empty array
+		    document.write(removed.length + "<br>"); // Prints: 0
+		     
+		    removed = colors.splice(1, 1, "Purple", "Voilet"); // Insert two values, remove one
+		    document.write(colors + "<br>"); //Prints: Green,Purple,Voilet,Yellow,Blue
+		    document.write(removed + "<br>"); // Prints: Pink (one item array)
+		    document.write(removed.length); // Prints: 1
+	    </script>
+	</body>
+</html>
+
+//----------------------------------------------------------------------------------------------------
+
+	// Creating a String from an Array: 
+		
+		- There may be situations where you simply want to create a string by joining the elements of an array. To do this you can use the join() method
+
+		- You can also convert an array to a comma-separated string using the toString(). 
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Join All Elements of an Array into a String</title>
+	</head>
+	<body>
+	    <script>
+		    var colors = ["Red", "Green", "Blue"];
+		 
+		    document.write(colors.join() + "<br>"); // Prints: Red,Green,Blue
+		    document.write(colors.join("") + "<br>"); // Prints: RedGreenBlue
+		    document.write(colors.join("-") + "<br>"); // Prints: Red-Green-Blue
+		    document.write(colors.join(", ")); // Prints: Red, Green, Blue
+		     document.write(colors.toString()); // Prints: Red,Green,Blue
+	    </script>
+	</body>
+</html>
+
+//-------------------------------------------------------------------------------------------
+
+	// Extracting a Portion of an Array
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Extract All Elements from an Array beyond Specific Index</title>
+	</head>
+	<body>
+	    <script>
+		    var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+		    
+		    document.write(subarr); // Prints: Banana,Mango
+		    document.write(fruits.slice(2) + "<br>"); // Prints: Mango,Orange,Papaya
+		    document.write(fruits.slice(-2) + "<br>"); // Prints: Orange,Papaya
+		    document.write(fruits.slice(2, -1)); // Prints: Mango,Orange
+	    </script>
+	</body>
+</html>
+
+//----------------------------------------------------------------------------------------
+
+	// Array concat
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Merge Multiple Arrays</title>
+</head>
+<body>
+    <script>
+    var pets = ["Cat", "Dog", "Parrot"];
+    var wilds = ["Tiger", "Wolf", "Zebra"];
+    var bugs = ["Ant", "Bee"];
+    
+    // Creating new array by combining pets and wilds arrays
+    var animals = pets.concat(wilds); 
+    document.write(animals+"</br>"); // Prints: 
+      
+    // Creating new array by combining pets, wilds and bugs arrays
+    animals = pets.concat(wilds, bugs); 
+    document.write(animals); // Prints: Cat,Dog,Parrot,Tiger,Wolf,Zebra,Ant,Bee
+    </script>
+</body>
+</html>
+
+//---------------------------------------------------------------------------------
+
+		// Searching Through an Array
+
+		var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+		document.write(fruits.indexOf("Apple")); // Prints: 0
+		document.write(fruits.indexOf("Banana")); // Prints: 1
+		document.write(fruits.indexOf("Pineapple")); // Prints: -1
+
+		//------------------------------------------------------
+
+		var arr = [1, 0, 3, 1, false, 5, 1, 4, 7];
+		 
+		// Searching forwards, starting at from- index
+		document.write(arr.indexOf(1, 2)); // Prints: 3
+		 
+		// Searching backwards, starting at from index
+		document.write(arr.lastIndexOf(1, 2)); // Prints: 0
+
+
+//-----------------------------------------------------------------------------------
+
+	- If you want to search an array based on certain condition then you can use the JavaScript find() method which is newly introduced in ES6. This method returns the value of the first element in the array that satisfies the provided testing function. Otherwise it return undefined.
+
+	- one more method similar to find() is findIndex() method, which returns the index of a found element in the array instead of its value.
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Search an Array based on Certain Condition</title>
+	</head>
+	<body>
+	    <script>
+	    var arr = [1, 0, 3, 1, false, 11, 5, 1, 4, 7];
+	 
+	    var result = arr.find(function(element){
+	        return element > 3;
+	    });
+	    document.write(result); // Prints: 5
+	    </script>
+	</body>
+</html>
+
+
+	- The filter() method creates a new array with all the elements that successfully passes the given test.
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Filter an Array</title>
+	</head>
+	<body>
+	    <script>
+	    var arr = [1, 0, 3, 1, false, 5, 1, 4, 7];
+	 
+	    var result = arr.filter(function(element){
+	      return element > 4;
+	    });
+	    document.write(result + "<br>"); // Prints: 5,7
+	    document.write(result.length); // Prints: 2
+	    </script>
+	</body>
+</html>
+
+
+//---------------------------------------------------------------------------------------------
+
+	// Sorting an Array
+
+			- The JavaScript Array object has a built-in method sort() for sorting array elements in alphabetical order.
+
+			var fruits = ["Banana", "Orange", "Apple", "Papaya", "Mango"];
+			var sorted = fruits.sort();
+
+			alert(fruits); // Outputs: Apple,Banana,Mango,Orange,Papaya
+			alert(sorted); // Outputs: Apple,Banana,Mango,Orange,Papaya
+
+
+	// Reversing an Array
+
+			- You can use the reverse() method to reverse the order of the elements of an array.
+
+			var counts = ["one", "two", "three", "four", "five"];
+			var reversed = counts.reverse(); 
+
+			alert(counts); // Outputs: five,four,three,two,one
+			alert(reversed); // Output: five,four,three,two,one
+
+
+	// Sorting the numeric array
+
+			var numbers = [5, 20, 10, 75, 50, 100];
+			numbers.sort(); // Sorts numbers array
+			alert(numbers); // Outputs: 10,100,20,5,50,75
+
+			so use sort in this way
+
+			var numbers = [5, 20, 10, 75, 50, 100];
+
+			// Sorting an array using compare function
+			numbers.sort(function(a, b) {
+			    return a - b;
+			});
+			alert(numbers); // Outputs: 5,10,20,50,75,100
+
+
+	// Finding min and max 
+
+	<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <title>JavaScript Find the Maximum and Minimum Value in an Array</title>
+	</head>
+	<body>
+	    <script>
+	    var numbers = [3, -7, 10, 8, 15, 2];
+
+	    // Defining function to find maximum value
+	    function findMax(array){
+	        return Math.max.apply(null, array);
+	        // This about equal to Math.max(numbers[0], ...)
+	    }
+	    
+	    // Defining function to find minimum value
+	    function findMin(array){
+	        return Math.min.apply(null, array);
+	    }
+	    
+	    document.write(findMax(numbers) + "<br>"); // Outputs: 15
+	    document.write(findMin(numbers)); // Outputs: -7
+	    </script>
+	</body>
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		const array = ['a', 'b'];
+		const elements = [0, 1, 2];
+		array.push.apply(array, elements);
+		console.info(array); // ["a", "b", 0, 1, 2]
+
+	</script>
+</body>
+</html>
+</html>

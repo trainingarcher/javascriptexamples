@@ -1,0 +1,136 @@
+<!-- 
+
+		// Document Object Model, or DOM
+
+
+		 - JS DOM Nodes: 
+
+	  					<!DOCTYPE html>
+						<html>
+						<head>
+						    <title>My Page</title>
+						</head>
+						<body>
+						    <h1>Mobile OS</h1>
+						    <ul>
+						        <li>Android</li>
+						        <li>iOS</li>
+						    </ul>
+						</body>
+						</html>
+
+
+
+
+								Document
+									|
+								  <html>
+								  	|
+								  	|
+					--------------------------------------
+					|									 |
+				   head 								body 
+					|									 |
+				  title 					    --------------------------
+				    |							|						 |
+				  My Page   				   <h1>					    <ul>
+				  								 |						 |
+				  						    Mobile os              ------------------
+				  						    						|		        |
+				  						    					   <li>           <li>
+				  						    					   	 |		        |
+				  						    					   Android         iOS	  	
+
+
+ - Selecting DOM Elements in JavaScript:
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Select Topmost Elements</title>
+</head>
+<body>
+    <script>
+    // Prints lang attribute value of html element
+    document.write(document.documentElement.getAttribute("lang")); // Prints: en
+    document.write("<br>");
+    
+    // Set background color of body element
+    document.body.style.background = "yellow";
+    
+    // Prints tag name of the head element's first child
+    document.write(document.head.firstElementChild.nodeName); // Prints: meta
+    </script>
+</body>
+</html>
+
+
+
+// Selecting Elements by ID
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Select an Element by its ID Attribute</title>
+</head>
+<body>
+    <p id="mark">This is a paragraph of text.</p>
+    <p>This is another paragraph of text.</p>
+
+    <script>
+    // Selecting element with id mark 
+    var match = document.getElementById("mark");
+     
+    // Highlighting element's background
+    match.style.background = "yellow";
+    </script>
+</body>
+</html>
+
+
+
+// Selecting Elements by Class Name
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Select Elements by Class Name</title>
+</head>
+<body>
+    <p class="test">This is a paragraph of text.</p>
+    <div class="block test">This is another paragraph of text.</div>
+    <p>This is one more paragraph of text.</p>
+    <hr>
+
+    <script>
+    // Selecting elements with class test
+    var matches = document.getElementsByClassName("test");
+        
+    // Displaying the selected elements count
+    document.write("Number of selected elements: " + matches.length);
+     
+    // Applying bold style to first element in selection
+    matches[0].style.fontWeight = "bold";
+    // Applying italic style to last element in selection
+    matches[matches.length - 1].style.fontStyle = "italic";
+        
+        
+    // Highlighting each element's background through loop
+    for(var elem in matches) {  
+        matches[elem].style.background = "yellow";    }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

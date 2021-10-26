@@ -1,0 +1,203 @@
+<!-- 
+	// Some Additional Concepts: 
+
+	JavaScript Sets: Collections of unique values (No repeat value in the same collection)
+
+		- Creating the set:
+
+			var arr=[11,22,33,44];
+			const data= new set(arr);
+			document.write(data); 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Set</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [11,22,33,50,44,55,66,11,22];
+			var data = new Set(arr);
+
+			// set contains 10, 20
+			data.add(10);
+			data.add(20);
+
+			// prints true
+			console.log(data.has(50));
+			console.log(data); 
+
+			// getting all the values
+			var getValues = data.values();
+			 
+			// prints a SetIterator
+			// that contains {50, 30, 40, "Geeks", "GFG"}
+			console.log(getValues);
+
+			// creating set it contains
+			// f, o , d, i, e
+			var set1 = new Set("foooodiiiieee");
+			// deleting e from the set
+			// it prints true
+			console.log(set1.delete('e'));
+			console.log(set1); 
+			set1.clear()
+			console.log(set1); 
+			// it contains
+			// ["sumit","amit","anil","anish"]
+			var set2 = new Set(["sumit","sumit","amit","anil","anish"]);
+
+
+		</script>
+	</body>
+</html>
+
+//------------------------------------------------------------------------------------------------------
+
+		// JavaScript Maps :
+
+		Map holds key-value pairs where the keys can be any datatype, it remembers the original insertion order
+
+			creating Map using the array
+
+						const fruits = new Map([
+						  ["apples", 500],
+						  ["bananas", 300],
+						  ["oranges", 200]
+						]);
+
+			   // Map with the set() method
+
+						const fruits = new Map();
+
+						// Set Map Values
+						fruits.set("apples", 500);
+						fruits.set("bananas", 300);
+						fruits.set("oranges", 200);
+
+
+				- fruits.get("apples");    // Returns 500
+				- fruits.size;
+				- fruits.delete("apples");
+				- fruits.has("apples");
+
+				- List all entries
+
+					let text = "";
+					fruits.forEach (function(value, key) {
+					  text += key + ' = ' + value;
+					})
+
+				- List all entries
+					
+					let text = "";
+					for (const x of fruits.entries()) {
+					  text += x;
+					}
+
+//-------------------------------------------------------------------------------------------
+
+	// Exception handling statements (Using the try, catch, finally and throw)			
+
+
+		You can throw exceptions using the throw statement and handle them using the try...catch statements.
+
+			- throw statement
+			- try...catch statement
+
+
+			Exception types
+
+			Any object can be thrown in JavaScript. While it is common to throw numbers or strings as errors, it is frequently more effective to use one of the exception types specifically created for this purpose:
+
+
+				- ECMAScript exceptions
+				- DOMException and DOMError
+
+				throw 'Error2';   // String type
+				throw 42;         // Number type
+				throw true;       // Boolean type
+				throw {toString: function() { return "I'm an object!"; } };
+
+
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Try-Catch-Finally Statement</title>
+	    <script type="text/javascript">
+	    	
+	    	function myFunction() {
+			    const x = 50;
+			    const y = 0;
+			    try {
+			        if (y === 0) {
+			            throw ("This is division by zero error");
+			        } else {
+			            const z = x / y;
+			        }
+			    } catch (error) {
+			        alert("Error: " + error);
+			    }
+			    finally{
+			    	alert("Finally: Finally gets executed");
+			    }
+			}
+	    </script>
+	</head>
+	<body>
+	    <script type="text/JavaScript"></script>
+	     <p>Click the button to see the output</p>
+	     <button type="button" onclick="myFunction()">Click Here</button>
+	</body>
+</html>				
+
+//------------------------------------------------------------------------------------------------------
+
+		// strict mode
+
+			In "Strict Mode", undeclared variables are not automatically global. means  you can not use undeclared variables. It is not a statement, but a literal expression.
+
+			Strict mode is declared by adding "use strict"; to the beginning of a script or a function
+
+
+//---------------------------------------------------------------------------------------------------
+
+	// Arrow Function 
+
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<h2>JavaScript Arrow Function</h2>
+
+		<p id="demo"></p>
+
+		<script>
+			var hello;
+
+			hello = () => {
+			  return "Hello World!";
+			}
+
+			document.getElementById("demo").innerHTML = hello();
+		</script>
+
+	</body>
+</html>
+
+//-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
